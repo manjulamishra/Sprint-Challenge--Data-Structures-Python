@@ -16,6 +16,17 @@ for name_1 in names_1:
         if name_1 == name_2:
             duplicates.append(name_1)
 
+"""
+The two are my solutions: both are O(n lon n), it takes about 1.40 secs on my machine
+"""
+duplicates = []
+for name in names_1:
+    if name in names_2:
+        duplicates.append(name)
+
+# or this one (same but in list comprehension way)
+duplicates = [elem for elem in names_1 if elem in names_2] 
+
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
